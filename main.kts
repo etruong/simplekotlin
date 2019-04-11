@@ -39,7 +39,7 @@ class Person (var firstName: String, var lastName: String, var age: Int) {
             return "[Person firstName:${this.firstName} lastName:${this.lastName} age:${this.age}]" 
         }
     
-    fun equals(other: Person): Boolean {
+    public fun equals(other: Person): Boolean {
         if (other.firstName != this.firstName)
             return false
         else if (other.lastName != this.lastName)
@@ -51,7 +51,7 @@ class Person (var firstName: String, var lastName: String, var age: Int) {
     }
 
     override
-    fun hashCode(): Int {
+    public fun hashCode(): Int {
         var hashCode = 0
 
         hashCode = 31 * hashCode + this.firstName.hashCode()
@@ -97,9 +97,7 @@ class Money constructor(var userAmount: Int, var userCurrency: String) {
     }
 
     operator fun plus(other: Money): Money {
-
         return Money((other.convert(currency).amount + amount), currency)
-
     }
 
 }
